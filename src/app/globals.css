@@ -551,9 +551,11 @@ input, select, textarea {
   background: rgba(239, 68, 68, 0.15);
 }
 
-/* HERO SECTION */
 .hero-banner {
-  background: radial-gradient(circle at 80% 20%, #1e3a8a 0%, #0a192f 60%, #030712 100%);
+  background-color: #07152b;
+  background-image: linear-gradient(135deg, rgba(7, 21, 43, 0.90) 0%, rgba(10, 25, 47, 0.86) 100%), url('/images/real/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
   padding: 4.5rem 0 5rem 0;
   position: relative;
@@ -819,10 +821,10 @@ input, select, textarea {
 }
 
 .category-img-container {
-  height: 150px;
+  height: 160px;
   width: 100%;
   position: relative;
-  background-color: #1e293b;
+  background-color: #0f172a;
   overflow: hidden;
 }
 
@@ -830,10 +832,26 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
 }
 
-.category-card:hover .category-img {
+.category-img-default {
+  transition: opacity 0.4s ease, transform 0.45s ease;
+}
+
+.category-img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.45s ease;
+}
+
+.category-card:hover .category-img-default {
+  opacity: 0;
+  transform: scale(1.08);
+}
+
+.category-card:hover .category-img-hover {
+  opacity: 1;
   transform: scale(1.08);
 }
 

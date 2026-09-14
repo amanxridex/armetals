@@ -173,11 +173,15 @@ export default function HomePage() {
             {Object.values(CATEGORIES_DATA).map((cat) => (
               <Link key={cat.slug} href={`/products/${cat.slug}`} className="category-card">
                 <div className="category-img-container">
-                  <img src={cat.bannerImage} alt={cat.name} className="category-img" />
+                  <img src={cat.bannerImage} alt={cat.name} className="category-img category-img-default" />
+                  {cat.hoverImage && (
+                    <img src={cat.hoverImage} alt={`${cat.name} detail`} className="category-img category-img-hover" />
+                  )}
                   <div style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to top, rgba(10, 25, 47, 0.85) 0%, transparent 60%)'
+                    background: 'linear-gradient(to top, rgba(10, 25, 47, 0.85) 0%, transparent 60%)',
+                    zIndex: 2
                   }} />
                   <span style={{
                     position: 'absolute',
@@ -186,7 +190,8 @@ export default function HomePage() {
                     color: '#ffffff',
                     fontFamily: 'var(--font-heading)',
                     fontSize: '1.4rem',
-                    fontWeight: 700
+                    fontWeight: 700,
+                    zIndex: 3
                   }}>
                     {cat.name}
                   </span>
@@ -433,7 +438,138 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. BOTTOM CTA BANNER */}
+      {/* 7. ECOSYSTEM & MARKET INSIGHTS (EXACT VEDANTA ASSETS) */}
+      <section className="section-wrapper" style={{ background: 'var(--surface-bg)' }}>
+        <div className="container">
+          <div className="section-head-box">
+            <div className="section-subhead">Marketplace Ecosystem</div>
+            <h2 className="section-title">Technology, Logistics &amp; <span>Industry Insights</span></h2>
+            <p className="section-desc">
+              Powering India&apos;s heavy manufacturing landscape with end-to-end supply chain integration, technical advisory, and transparent market intelligence.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem'
+          }}>
+            {/* Transport & Logistics */}
+            <div style={{
+              background: '#ffffff',
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              border: '1px solid var(--surface-border)',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ height: '180px', overflow: 'hidden' }}>
+                <img
+                  src="/images/real/transport.jpg"
+                  alt="Transport & Fleet Logistics"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+              <div style={{ padding: '1.25rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-600)', textTransform: 'uppercase' }}>Logistics Fleet</span>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0.35rem 0', color: 'var(--primary-900)' }}>Integrated Pan-India Freight Network</h4>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                  Real-time GPS dispatch with guaranteed transit safety, express 24-48 hr deliveries from 30+ regional hubs, and end-to-end multi-axle freight coverage.
+                </p>
+                <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.85rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--primary-600)' }}>
+                  <span>Logistics Details</span>
+                  <ChevronRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Tech Bazaar */}
+            <div style={{
+              background: '#ffffff',
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              border: '1px solid var(--surface-border)',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ height: '180px', overflow: 'hidden' }}>
+                <img
+                  src="/images/real/tech-bazaar.jpg"
+                  alt="Tech Bazaar Digital Procurement"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+              <div style={{ padding: '1.25rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-600)', textTransform: 'uppercase' }}>Digital Commerce</span>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0.35rem 0', color: 'var(--primary-900)' }}>Tech Bazaar Enterprise Platform</h4>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                  Algorithmic spot price locking, dynamic tonnage booking, ERP SAP automated integrations, and digital MTC 3.1 chemical test verification.
+                </p>
+                <Link href="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.85rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--primary-600)' }}>
+                  <span>Explore Platform</span>
+                  <ChevronRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Press Releases */}
+            <div style={{
+              background: '#ffffff',
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              border: '1px solid var(--surface-border)',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ height: '180px', overflow: 'hidden' }}>
+                <img
+                  src="/images/real/Press-Releases.jpg"
+                  alt="Press Releases & Dispatches"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+              <div style={{ padding: '1.25rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-600)', textTransform: 'uppercase' }}>Media &amp; Announcements</span>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0.35rem 0', color: 'var(--primary-900)' }}>Press Dispatches &amp; Plant Updates</h4>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                  Read official plant expansion circulars, green low-carbon metal announcements, and quarterly manufacturing production benchmarks.
+                </p>
+                <Link href="/about" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.85rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--primary-600)' }}>
+                  <span>Read Updates</span>
+                  <ChevronRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Articles & Insights */}
+            <div style={{
+              background: '#ffffff',
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              border: '1px solid var(--surface-border)',
+              boxShadow: 'var(--shadow-sm)'
+            }}>
+              <div style={{ height: '180px', overflow: 'hidden' }}>
+                <img
+                  src="/images/real/articles.jpg"
+                  alt="Industry Articles & Metallurgical Research"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+              <div style={{ padding: '1.25rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary-600)', textTransform: 'uppercase' }}>Technical Articles</span>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0.35rem 0', color: 'var(--primary-900)' }}>Metallurgy Research &amp; Market Dynamics</h4>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                  Expert guides on ASTM standards, zinc dross reduction, high-conductivity copper drawing techniques, and global LME hedging strategies.
+                </p>
+                <Link href="/live-prices" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.85rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--primary-600)' }}>
+                  <span>Explore Articles</span>
+                  <ChevronRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. BOTTOM CTA BANNER */}
       <section style={{
         background: 'linear-gradient(135deg, #0a192f 0%, #0052cc 100%)',
         color: '#ffffff',

@@ -27,11 +27,12 @@ export interface MetalProduct {
 }
 
 export interface MetalCategoryInfo {
-  slug: 'aluminium' | 'copper' | 'zinc-lead' | 'steel-iron' | 'silver';
+  slug: 'aluminium' | 'copper' | 'zinc-lead' | 'steel-iron' | 'silver' | 'oil-gas';
   name: string;
   subtitle: string;
   tagline: string;
   bannerImage: string;
+  hoverImage?: string;
   overview: string;
   highlightStats: { label: string; value: string }[];
   standards: string[];
@@ -44,7 +45,8 @@ export const CATEGORIES_DATA: Record<string, MetalCategoryInfo> = {
     name: 'Aluminium',
     subtitle: 'Primary Ingots, EC Wire Rods, Billets, Rolled Products & Foundry Alloys',
     tagline: 'High-purity primary aluminium engineered for power transmission, automotive, extrusion and architectural excellence.',
-    bannerImage: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80',
+    bannerImage: '/images/real/aluminium.jpg',
+    hoverImage: '/images/real/aluminium1.jpg',
     overview: 'AR Metals is one of India\'s largest digital suppliers of prime-grade aluminium products. Manufactured in state-of-the-art smelters, our aluminium products meet stringent international standards (ASTM, IS, EN) with purities ranging from 99.70% (P1020) up to 99.85% (P0610). From 6063 extrusion billets to continuous-cast EC grade wire rods for electrical transmission, we guarantee seamless supply across 30+ warehouses nationwide.',
     highlightStats: [
       { label: 'Purity Level', value: 'Up to 99.85%' },
@@ -60,7 +62,8 @@ export const CATEGORIES_DATA: Record<string, MetalCategoryInfo> = {
     name: 'Copper',
     subtitle: 'Continuous Cast Copper Wire Rods, Electrolytic Cathodes & Billets',
     tagline: 'Electrolytic Grade-A Copper with 99.99% purity and >101% IACS conductivity for electrical, cable, and renewable industries.',
-    bannerImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
+    bannerImage: '/images/real/copper.jpg',
+    hoverImage: '/images/real/copper1.jpg',
     overview: 'Engineered for exceptional electrical and thermal conductivity, AR Metals offers prime Continuous Cast (CC) Copper Rods (8mm, 11mm, 12mm, 16mm) and Grade A LME-registered Electrolytic Copper Cathodes (Cu-ETP / Cu-OF). Our copper products adhere to ASTM B115, ASTM B49, and IS 12444, ensuring zero hydrogen embrittlement and optimal drawability for magnet wire and high-voltage transmission.',
     highlightStats: [
       { label: 'Copper Purity', value: '99.99% Min' },
@@ -76,7 +79,8 @@ export const CATEGORIES_DATA: Record<string, MetalCategoryInfo> = {
     name: 'Zinc & Lead',
     subtitle: 'Special High Grade (SHG) Zinc, Galvanizing Alloys & 99.97% Refined Lead',
     tagline: 'LME-registered Special High Grade Zinc and refined pure lead for steel galvanizing, die-casting, and energy storage batteries.',
-    bannerImage: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=1600&q=80',
+    bannerImage: '/images/real/zinc.jpg',
+    hoverImage: '/images/real/zinc1.jpg',
     overview: 'AR Metals provides the full spectrum of non-ferrous heavy metals. Our Special High Grade (SHG) Zinc ingots boast a guaranteed 99.995% purity, widely preferred by India\'s leading galvanizers and die-casters. We also supply Continuous Galvanizing Grade (CGG) zinc-aluminium-lead master alloys and 99.97% refined lead ingots for lead-acid automotive batteries, solar power storage, and radiation protection.',
     highlightStats: [
       { label: 'SHG Zinc Purity', value: '99.995% Guaranteed' },
@@ -92,7 +96,8 @@ export const CATEGORIES_DATA: Record<string, MetalCategoryInfo> = {
     name: 'Steel & Iron',
     subtitle: 'Primary Fe 500D / 550D TMT Rebars, Wire Rods, DI Pipes & Pig Iron',
     tagline: 'High-yield construction steel and foundry pig iron engineered for mega-infrastructure, bridges, and foundry casting.',
-    bannerImage: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=1600&q=80',
+    bannerImage: '/images/real/steel.jpg',
+    hoverImage: '/images/real/steel1.jpg',
     overview: 'From earthquake-resistant Fe 500D and Fe 550D TMT rebars with superior ductility and corrosion resistance to prime billets and low-carbon wire rods, AR Metals delivers structural steel direct from India\'s top integrated blast furnaces. We also supply high-grade foundry pig iron and ductile iron (DI) pipes for water infrastructure and urban development projects.',
     highlightStats: [
       { label: 'Steel Grade', value: 'Fe 500D / 550D' },
@@ -108,7 +113,8 @@ export const CATEGORIES_DATA: Record<string, MetalCategoryInfo> = {
     name: 'Silver & Precious',
     subtitle: '999.9 Fine Silver Bars & Industrial Silver Grains',
     tagline: 'LBMA-accredited 999.9 fine purity silver bars and grains for solar photovoltaic cells, electrical contacts, brazing alloys, and bullion.',
-    bannerImage: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1600&q=80',
+    bannerImage: '/images/real/silver.jpg',
+    hoverImage: '/images/real/silver1.jpg',
     overview: 'AR Metals supplies certified 999.9 fine silver bars (typically 30kg cast bars) and granular silver for high-tech industrial applications, including solar paste manufacturing, vacuum coating, electrical contact production, and specialized brazing alloys. Every batch is stamped with certified assay serial numbers and weight certificates.',
     highlightStats: [
       { label: 'Silver Purity', value: '999.9 Fine (99.99%)' },
@@ -118,6 +124,23 @@ export const CATEGORIES_DATA: Record<string, MetalCategoryInfo> = {
     ],
     standards: ['IS 2112', 'ASTM B413', 'LBMA Good Delivery Standard'],
     gradesOffered: ['999.9 Fine Cast Silver Bar (30 kg)', 'Fine Silver Grains (99.99% Pure)', 'Silver Brazing Alloy Strips & Wires']
+  },
+  'oil-gas': {
+    slug: 'oil-gas',
+    name: 'Oil & Gas',
+    subtitle: 'Industrial Energy, Metcoke & High Carbon Feedstocks',
+    tagline: 'Industrial grade petroleum and energy products powering blast furnaces, foundries, and processing plants.',
+    bannerImage: '/images/real/oil-gas.jpg',
+    hoverImage: '/images/real/oil-gas1.jpg',
+    overview: 'High-calorific energy products, metcoke, and carbon fuels essential for smelting and metallurgical reduction operations across heavy engineering industries.',
+    highlightStats: [
+      { label: 'Fixed Carbon', value: 'Up to 88%' },
+      { label: 'Ash Content', value: '<12% Low Ash' },
+      { label: 'Moisture', value: '<5% Controlled' },
+      { label: 'Logistics', value: 'Rake & Bulk Truck' }
+    ],
+    standards: ['IS 1354', 'ASTM D3172', 'ISO 562'],
+    gradesOffered: ['Metallurgical Coke (Metcoke)', 'Calcined Petroleum Coke (CPC)', 'Low Ash Metallurgical Coke', 'Industrial Carbon Blocks']
   }
 };
 
@@ -139,7 +162,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 2450,
     originPlant: 'Odisha Smelter Hub',
     dispatchHubs: ['Mumbai (Bhiwandi)', 'Delhi NCR (Faridabad)', 'Ahmedabad', 'Chennai'],
-    image: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/products/al-ingot.jpg',
     description: 'Standard remelt ingot used for casting alloys, rolling into foils/sheets, and master alloy formulations. Smooth surface, minimal dross, and consistent chemical composition guaranteed.',
     applications: ['Automotive alloy wheels', 'Electrical conductor casting', 'Aluminium extrusions', 'Sheet & foil rolling'],
     technicalSpecs: {
@@ -165,7 +188,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 1820,
     originPlant: 'Chhattisgarh Smelter',
     dispatchHubs: ['Mumbai (Bhiwandi)', 'Delhi NCR', 'Hyderabad', 'Kolkata'],
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/products/al-wire-rod.jpg',
     description: 'Continuous cast and rolled EC Grade aluminium rod specifically tailored for drawing into AAC, ACSR, and AL-59 conductors with conductivity exceeding 61.5% IACS.',
     applications: ['Power transmission lines (ACSR/AAC)', 'Building wiring & cables', 'Transformer windings', 'Telecommunication lines'],
     technicalSpecs: {
@@ -191,7 +214,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 1400,
     originPlant: 'Odisha Smelter Hub',
     dispatchHubs: ['Mumbai (Bhiwandi)', 'Ahmedabad', 'Chennai', 'Delhi NCR'],
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/products/al-billet.jpg',
     description: 'Direct-chill (DC) cast and ultrasonic tested homogenized billets offering excellent surface finish, high extrusion speed, and responsive anodizing properties.',
     applications: ['Architectural door & window frames', 'Solar panel mounting structures', 'Industrial heat sinks', 'Automotive body frames'],
     technicalSpecs: {
@@ -217,7 +240,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 950,
     originPlant: 'Chhattisgarh Smelter',
     dispatchHubs: ['Pune Industrial Area', 'Chennai (Sriperumbudur)', 'Delhi NCR'],
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/products/al-foundry.jpg',
     description: 'Modified with Strontium (Sr) for refined eutectic silicon microstructure. Low iron and gas content ensure outstanding fatigue resistance for safety-critical vehicle castings.',
     applications: ['Alloy wheels for 2-wheelers & 4-wheelers', 'Cylinder heads & engine blocks', 'Suspension knuckle arms', 'Aerospace brackets'],
     technicalSpecs: {
@@ -245,7 +268,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 1100,
     originPlant: 'Dahej Coastal Refinery',
     dispatchHubs: ['Mumbai (Bhiwandi)', 'Delhi NCR', 'Ahmedabad', 'Chennai'],
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/copper.jpg',
     description: 'Produced using Southwire / Contirod continuous melting and casting technology. Outstanding surface smoothness, low oxide film, and uniform grain structure for high-speed multi-wire drawing down to 0.05 mm.',
     applications: ['Enamelled winding wire', 'Power & solar DC cables', 'Submersible pump cables', 'Transformers & motor stators'],
     technicalSpecs: {
@@ -271,7 +294,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 850,
     originPlant: 'Dahej Coastal Refinery',
     dispatchHubs: ['Mumbai (Bhiwandi)', 'Ahmedabad', 'Kolkata'],
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/copper1.jpg',
     description: 'High-purity electrolytic copper cathodes registered under LME Grade A standards. Free from nodular dendrites, chemical stains, and gas inclusions. The ideal melting feedstock for bronze, brass, and copper alloy manufacturers.',
     applications: ['Continuous casting of copper rod', 'Brass & Bronze alloy ingot production', 'Chemical copper sulfate production', 'Foil manufacturing for EV lithium battery anodes'],
     technicalSpecs: {
@@ -299,7 +322,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 3100,
     originPlant: 'Rajasthan Smelter Hub',
     dispatchHubs: ['Mumbai', 'Delhi NCR', 'Ahmedabad', 'Chennai', 'Kolkata'],
-    image: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/zinc.jpg',
     description: 'LME-approved primary Special High Grade Zinc offering virtually zero impurities. Essential for continuous hot-dip galvanizing lines, brass smelting, and precision die-casting.',
     applications: ['Hot-dip steel galvanizing (pipes, sheets, towers)', 'Die casting alloys (ZAMAK 3/5)', 'Brass alloy production (60/40, 70/30)', 'Zinc oxide for rubber & tire manufacturing'],
     technicalSpecs: {
@@ -325,7 +348,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 1900,
     originPlant: 'Rajasthan Smelter Hub',
     dispatchHubs: ['Mumbai (Bhiwandi)', 'Delhi NCR', 'Pune', 'Chennai'],
-    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/lead.jpg',
     description: 'High-purity primary refined lead ingot specially formulated for battery paste, grid manufacturing, and chemical lead linings with ultra-low bismuth content.',
     applications: ['Automotive & inverter lead-acid batteries', 'Nuclear & medical X-ray radiation shielding', 'Cable sheathing & chemical linings', 'Lead shot & weights'],
     technicalSpecs: {
@@ -353,7 +376,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 4800,
     originPlant: 'Odisha Integrated Steel Plant',
     dispatchHubs: ['Mumbai', 'Delhi NCR', 'Ahmedabad', 'Kolkata', 'Hyderabad', 'Raipur'],
-    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/steel.jpg',
     description: 'Thermo-Mechanically Treated (TMT) rebars manufactured via automated computerized Quenching and Self-Tempering (QST) process. Superior bendability, uniform rib pattern for rock-solid concrete bond, and elevated fire/corrosion resistance.',
     applications: ['High-rise skyscrapers & commercial towers', 'Highway flyovers, metro rail & bridges', 'Seismic Zone IV & V earthquake-resistant structures', 'Coastal ports & industrial foundations'],
     technicalSpecs: {
@@ -379,7 +402,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 3600,
     originPlant: 'Odisha Integrated Steel Plant',
     dispatchHubs: ['Mumbai', 'Faridabad', 'Pune', 'Raipur', 'Chennai'],
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/steel1.jpg',
     description: 'Hot-rolled wire rods cooled via Stelmor controlled cooling conveyor to obtain fine pearlitic/ferritic structure. Exceptional cold-heading, drawing, and galvanized wire performance.',
     applications: ['Fasteners (bolts, screws, nuts, rivets)', 'Bright bar drawing & welding electrodes', 'Chain-link fencing & gabion mesh', 'Automotive springs & clutch wire'],
     technicalSpecs: {
@@ -408,7 +431,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 4.5,
     originPlant: 'Precious Metals Refinery Hub',
     dispatchHubs: ['Mumbai Secure Vault', 'Delhi NCR Secure Vault', 'Ahmedabad'],
-    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/silver.jpg',
     description: 'Certified 999.9 Fine Silver Cast Bar stamped with official AR Metals hallmark, fineness 999.9, gross weight, and individual laser-engraved serial number. Complies with LBMA Good Delivery specifications.',
     applications: ['Solar photovoltaic metallization paste', 'Electrical contact manufacture', 'Silver brazing alloys', 'Institutional bullion reserve'],
     technicalSpecs: {
@@ -435,7 +458,7 @@ export const PRODUCTS_CATALOG: MetalProduct[] = [
     availableStockMT: 2.8,
     originPlant: 'Precious Metals Refinery Hub',
     dispatchHubs: ['Mumbai Vault', 'Delhi Vault', 'Chennai Vault'],
-    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/real/silver1.jpg',
     description: 'Uniform, clean-flowing silver granules produced by inert gas atomization. Specially designed for precision induction melting and jewelry/industrial alloy production.',
     applications: ['Precision casting of high-conductivity electrical contact tips', 'Silver-Copper-Zinc brazing alloy formulation', 'Electroplating anodes & chemical synthesis'],
     technicalSpecs: {
